@@ -6,70 +6,57 @@
     <title>MenuKit.AI – AI-powered Menu Toolkit</title>
     <style>
       :root {
-        --bg: #000;
-        --fg: #fff;
+        --bg-start: #060606;
+        --bg-mid: #141414;
+        --bg-end: #2a2a2a;
+        --fg: #ffffff;
         --accent: #19f2ff;
-        --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        --font-main: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
           Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
       body {
-        background: var(--bg);
+        min-height: 100vh;
         color: var(--fg);
         font-family: var(--font-main);
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 100vh;
         text-align: center;
         padding: 2rem;
+        /* layered gradient background */
+        background:
+          radial-gradient(circle at 20% 30%, rgba(25,242,255,0.15) 0%, transparent 60%),
+          radial-gradient(circle at 80% 70%, rgba(255,0,119,0.12) 0%, transparent 60%),
+          linear-gradient(135deg,var(--bg-start) 0%, var(--bg-mid) 40%, var(--bg-end) 100%);
+        background-attachment: fixed;
       }
-      h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1.25rem;
-      }
-      h1 span {
-        color: var(--accent);
-      }
-      p {
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
-        line-height: 1.6;
-      }
-      ul {
-        list-style: none;
-        margin: 1rem 0 2rem;
-      }
-      li {
-        margin: 0.5rem 0;
-        font-size: 1rem;
-      }
-      li::before {
-        content: "• ";
-        color: var(--accent);
-      }
-      .cta {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: var(--accent);
-      }
+      main { max-width: 660px; animation: fadeIn 0.8s ease-out both; }
+      h1 { font-size: 2.8rem; margin-bottom: 1rem; font-weight: 600; }
+      h1 span { color: var(--accent); }
+      .tag { font-size: 1.15rem; margin-bottom: 2rem; opacity:.9; line-height:1.5; }
+      ul { list-style:none; margin-bottom:2.2rem; }
+      li { margin:.65rem 0; font-size:1.05rem; position:relative; padding-left:1.2rem; }
+      li::before{content:"";position:absolute;left:0;top:50%;width:.55rem;height:.55rem;background:var(--accent);border-radius:50%;transform:translateY(-50%);} 
+      .cta { font-size:1.25rem; font-weight:600; color:var(--accent); line-height:1.6; }
+      @keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+      /* responsive */
+      @media(max-width:480px){h1{font-size:2rem}.tag{font-size:.95rem}.cta{font-size:1.05rem}}
     </style>
   </head>
   <body>
     <main>
       <h1>Hi, we're <span>MenuKit.AI</span></h1>
-      <p>Spun out of OpenKit.AI, we’ve built an AI-powered toolbox to simplify your start-up journey:</p>
+      <p class="tag">Spun out of OpenKit.AI, we’ve built an AI-powered toolbox to simplify your start-up journey:</p>
       <ul>
         <li>AI Chat Assistant for F&amp;B Setup — ask anything about opening a restaurant</li>
         <li>3-Second Menu Generator — multilingual support with smart layout</li>
         <li>Smart Product Image Creator — one click to generate product photos</li>
         <li>More AI-powered features coming soon…</li>
       </ul>
-      <p class="cta">🎉 Free trial now available<br />Try it now via WeChat 🔍 开店工具箱</p>
+      <p class="cta">🎉 Free trial now available<br>Try it now via WeChat 🔍 开店工具箱</p>
     </main>
   </body>
 </html>
