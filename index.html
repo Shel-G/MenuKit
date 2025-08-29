@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>14 Beans Cupping · Web Poster</title>
+<meta name="description" content="14 Beans from Southeast Asia · Free Cupping · PerPer Coffee">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1: #0f0a06;
+    --bg2: #2a1b12;
+    --card: #111418;
+    --ink: #f2efe9;
+    --sub: #d0c6bb;
+    --accent: #f7c96e;
+    --border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* --- Base & Reset --- */
+  * { box-sizing: border-box; }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    font-family: 'Inter', 'Noto Sans SC', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    background: radial-gradient(1200px 800px at 15% 10%, rgba(247, 201, 110, 0.15), transparent 60%),
+                radial-gradient(900px 700px at 85% 90%, rgba(247, 201, 110, 0.08), transparent 60%),
+                linear-gradient(135deg, var(--bg1), var(--bg2));
+    color: var(--ink);
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* --- Main Poster Container --- */
+  .poster {
+    width: min(1000px, 95vw);
+    aspect-ratio: 3/4;
+    max-height: 90vh;
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.1));
+    border: 1px solid var(--border-color);
+    border-radius: clamp(16px, 3vw, 32px);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.03);
+    position: relative;
+    overflow: hidden;
+    padding: clamp(24px, 5vw, 64px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* --- Abstract Background Shapes --- */
+  .poster::before, .poster::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.2;
+    z-index: -1;
+  }
+  .poster::before {
+    width: 40%;
+    height: 50%;
+    background: radial-gradient(circle, var(--accent), transparent 60%);
+    top: -10%;
+    right: -15%;
+    opacity: 0.15;
+  }
+  .poster::after {
+    width: 35%;
+    height: 45%;
+    background: radial-gradient(circle, var(--accent), transparent 70%);
+    bottom: -15%;
+    left: -10%;
+    opacity: 0.1;
+  }
+
+  /* --- Header & Typography --- */
+  .brand {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 24px;
+    opacity: 0.8;
+  }
+  .brand .logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: radial-gradient(circle at 30% 30%, #ffe3a1, #a86b2f 70%);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.35);
+  }
+  .brand-name {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  .title {
+    margin: 0;
+    line-height: 1.05;
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  .title span {
+    display: block;
+  }
+  .title .outline {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--accent);
+    opacity: 0.7;
+  }
+
+  /* --- Main Content Grid --- */
+  .content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+  }
+  
+  .info-panel, .details-panel {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px;
+    backdrop-filter: blur(8px);
+  }
+  
+  .lang-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    font-size: clamp(14px, 1.5vw, 16px);
+    line-height: 1.6;
+  }
+  .lang-split p {
+    margin: 0 0 1em;
+    color: var(--sub);
+  }
+  .lang-split h3 {
+    margin: 0 0 0.5em;
+    font-weight: 600;
+    color: var(--ink);
+    font-size: clamp(16px, 1.8vw, 18px);
+  }
+  .zh {
+      font-family: 'Noto Sans SC', sans-serif;
+  }
+
+  /* --- Details Panel --- */
+  .details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .details-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: clamp(16px, 2vw, 18px);
+    font-weight: 500;
+  }
+  .details-list .icon {
+    width: 24px;
+    height: 24px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  
+  /* --- Footer --- */
+  .poster-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: clamp(16px, 3vw, 24px);
+    border-top: 1px solid var(--border-color);
+    margin-top: clamp(16px, 3vw, 24px);
+    gap: 20px;
+  }
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: clamp(14px, 1.5vw, 16px);
+    font-weight: 500;
+    color: var(--sub);
+  }
+  .footer-info.zh {
+    align-items: flex-end;
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media(max-width: 900px) {
+    .poster {
+        aspect-ratio: unset;
+        height: auto;
+        min-height: 90vh;
+    }
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    .lang-split {
+        grid-template-columns: 1fr;
+    }
+  }
+
+  @media(max-width: 600px) {
+    .poster-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .footer-info.zh {
+      align-items: flex-start;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="poster">
+    
+    <!-- Header Section -->
+    <header>
+      <div class="brand">
+        <div class="logo"></div>
+        <span class="brand-name">Coffee Sharing Event</span>
+      </div>
+      <h1 class="title">
+        <span>Taste the</span>
+        <span>Diversity</span>
+      </h1>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="content-grid">
+      
+      <!-- Left Panel: Event Description -->
+      <div class="info-panel">
+        <div class="lang-split">
+          <div class="en">
+            <h3>14 Beans, 1 Journey</h3>
+            <p>Explore a curated selection of 14 unique coffee beans from roasters across Southeast Asia. From Liberica to local Indonesian varieties, this is your chance to discover a new favorite.</p>
+          </div>
+          <div class="zh">
+            <h3>新加坡｜吉隆坡｜清迈，十四味</h3>
+            <p>我们走访东南亚，带回14款各具风味的咖啡豆。有利比里卡、印尼混合种等不同品种。诚邀您参与这场免费杯测，在风土的差异中，找到你喜欢的风味。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Panel: Details & CTA -->
+      <div class="details-panel">
+        <ul class="details-list">
+          <li>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0h18M12 12.75h.008v.008H12v-.008Z" /></svg>
+            <span>Mon, Sep 1</span>
+          </li>
+          <li>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+            <span>16:00 PM</span>
+          </li>
+          <li>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg>
+            <span>PerPer Coffee, Chengdu</span>
+          </li>
+        </ul>
+      </div>
+
+    </main>
+
+    <footer class="poster-footer">
+      <div class="footer-info">
+        <span>📅 Mon, Sep 1 · 16:00</span>
+        <span>📍 PerPer Coffee, Chengdu</span>
+      </div>
+      <div class="footer-info zh">
+        <span>📅 9 月 1 日（周一）16:00</span>
+        <span>📍 每每咖啡，成都</span>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
