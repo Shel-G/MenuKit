@@ -42,8 +42,8 @@
 
   /* --- Main Poster Container --- */
   .poster {
-    width: min(1000px, 95vw);
-    aspect-ratio: 9/16;
+    width: min(800px, 90vw);
+    aspect-ratio: 3/4;
     max-height: 90vh;
     background: linear-gradient(165deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.1));
     border: 1px solid var(--border-color);
@@ -106,7 +106,7 @@
   .title {
     margin: 0;
     line-height: 1.05;
-    font-size: clamp(3rem, 10vw, 7rem);
+    font-size: clamp(2.5rem, 9vw, 6rem); /* Reduced font size */
     font-weight: 800;
     letter-spacing: -0.02em;
     text-transform: uppercase;
@@ -205,9 +205,9 @@
   /* --- Responsive Adjustments --- */
   @media(max-width: 900px) {
     .poster {
-        aspect-ratio: unset;
+        aspect-ratio: 3/4;
         height: auto;
-        min-height: 90vh;
+        min-height: 85vh;
     }
     .content-grid {
         grid-template-columns: 1fr;
@@ -275,7 +275,7 @@
           </li>
           <li>
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg>
-            <span>PerPer Coffee, Chengdu｜每每咖啡，成都</span>      
+            <span>PerPer Coffee, Chengdu｜每每咖啡，成都</span>
           </li>
         </ul>
       </div>
